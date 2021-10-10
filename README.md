@@ -1,4 +1,4 @@
-# BloomLoader
+# ClumsyLoader
 BloomLoader is a single binary written in go that has the ability to download a specific backup of one of your servers on Pterodactyl Panel using the Pterodactyl Panel API.
 
 An example use case for this tool is if you want to take your own backups, you can run this tool on a server of some kind and have it run on a schedule, constantly downloading your backups for you automatically :).
