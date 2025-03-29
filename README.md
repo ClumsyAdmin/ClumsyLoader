@@ -1,18 +1,26 @@
 # ClumsyLoader
-ClumsyLoader is a single binary written in go that has the ability to download a specific backup of one of your servers on Pterodactyl Panel using the Pterodactyl Panel API.
 
-An example use case for this tool is if you want to take your own backups, you can run this tool on a server of some kind and have it run on a schedule, constantly downloading your backups for you automatically :).
+**ClumsyLoader** is a terminal-based Rust application for downloading backups from your DuckPanel using the API.
 
-I'm a very novice coder so there isn't any checks currently to see if a user messed something up. Please just make sure to fill in the .env file with your information :)
+It features a simple interactive TUI (terminal user interface) to:
+- Select a server from your account.
+- Choose from the list of available backups.
+- Download the selected backup to your local machine.
 
-EXAMPLE .env
-```
-SERVERID=d4e625e1
-APIKEY=f1753fgsqNy4IFuso2534wsdggMOSK1235sg0Rb
-BACKUPNUM=0
-PANELURL=mc.bloom.host
-```
+## Why use ClumsyLoader?
 
-Please keep in mind BACKUPNUM is in array, so start at 0 and count up (0 being your oldest backup).
+Bloom's scheduled backups automatically delete the oldest backup once the limit is reached. ClumsyLoader gives you the ability to automatically grab and store that backup elsewhere before it's deleted — useful for external backups and archival.
 
-With Pterodactyl's automatic clearing of the oldest backup when ran by a schedule, you can use this tool to automatically download the oldest backup every week, day, etc.
+## How to Use
+
+**Run the binary** which can be obtained from the [releases](https://github.com/ClumsyAdmin/ClumsyLoader/releases) tab
+
+
+When prompted:
+Paste your DuckPanel API key.
+
+Enter your Panel URL (or press Enter to use the default mc.bloom.host).
+
+Use the arrow keys to navigate the server and backup selection lists, then press Enter to confirm.
+
+Your selected backup will be downloaded in your working directory.
